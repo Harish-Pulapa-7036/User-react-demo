@@ -1,0 +1,16 @@
+td,
+tr,
+th,
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table {
+	width: 100%;
+}
+
+button {
+	color: white;
+	background-color: blue;
+}

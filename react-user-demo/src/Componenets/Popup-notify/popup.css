@@ -1,0 +1,18 @@
+#popup-contain {
+	background-color: #9bfbc6;
+    color: rgb(125, 132, 195);
+	/* display:none; */
+	text-align: center;
+	padding: 20rem auto;
+	width: 25%;
+	position: absolute;
+
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 50px 1px #000;
+	border-radius: 3rem;
+
+
+}
