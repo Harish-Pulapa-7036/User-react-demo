@@ -1,0 +1,12 @@
+#header{
+    background-color: rgb(159, 159, 251);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+#header-link{
+    text-decoration: none;
+    padding: 0.6rem;
+    width: 10%;
+    border-radius: 1rem;
+  
+}

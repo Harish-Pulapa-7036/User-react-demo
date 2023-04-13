@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./viewtable.css";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import Popup from "../Popup-notify/popup";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -84,7 +84,7 @@ const ViewTable = () => {
           })}
         </tbody>
       </table>
-      <Link to='/' style={{ textDecoration: "none" }}>Home</Link>
+      
       {
         ispop && <Popup popdata={popdata} setpop={setpop} />
       }
