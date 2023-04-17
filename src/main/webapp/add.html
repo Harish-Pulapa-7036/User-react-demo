@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 2rem;
+	width: 100%
+	
+	}
+	input{
+	width:30rem;
+	font-size: 2rem;
+	height: 3rem;
+	margin-top: 1rem;
+	border-radius: 1rem;
+	
+	
+	}
+	#add{
+		background-color: blue;
+		color: white;
+	}
+	h1,h3{
+		text-align: center;
+	}
+	#head{
+		background-color:lime;
+	}
+	
+</style>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+	
+<body>
+	<div id="contain">
+	<h1 id="head">User Form</h1>
+	<form id="addform" >
+	
+	<div>
+	<label>sl</label> <br>
+	 
+	<input type="text" name="sl" id="sl" placeholder="Serial number">
+	</div>
+	<div>
+	<label>user name</label> <br>
+	 
+	<input type="text" name="user_name" id="user_name" placeholder="Username">
+	</div>
+	<div>
+	<label>email</label> <br>
+	 
+	<input type="text" name="email" id="email" placeholder="Email">
+	</div><div>
+	<label>mobile</label> <br>
+	 
+	<input type="text" name="mobile" id="mobile" placeholder="Mobile">
+	</div>
+	
+	<input type="submit" value="Add" id="add">
+	
+	</form>
+	
+	
+	<h3>
+	
+		<a href="viewusers.html">Viewpage</a>
+	</h3>
+	</div>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+	$('#addform').submit(function(event) {
+	    // Stop the form from submitting normally
+	    event.preventDefault();
+
+	    // Serialize the form data
+	    var formData = $(this).serialize();
+		
+	    // Send the form data to the servlet
+	    $.ajax({
+	      type: 'POST',
+	      url: 'Insert',
+	      data: formData,
+	      success: function(response) {
+	        // Handle the server response
+	       
+	        alert('Successfully added');
+	        console.log(formdata);
+	        $('#sl').val(response.sl);
+	        $('#user_name').val(response.user_name);
+	        $('#mobile').val(response.mobile);
+	        $('#email').val(response.email);
+	        
+	      },
+	      error: function(xhr, status, error) {
+	        // Handle errors
+	        //console.log(xhr.responseText);
+	      }
+	    });
+	  });
+	$("#add").hover(function(){
+		  $(this).css("background-color", "green");
+		  }, function(){
+		  $(this).css("background-color", "blue");
+	});
+	});
+</script>
+</body>
+</html>
